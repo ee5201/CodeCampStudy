@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <title>This의 이해</title>
+    <script>
+      class Counter {
+        count = 10;
+        onClickButton() {
+          // 화살표 함수로 변경하는 방법
+          console.log("현재카운터", this.count);
+        }
+        render() {
+          const button = document.createElement("button");
+          button.innerText = "클릭하세요";
+          button.addEventListener("click", this.onClickButton.bind(this)); //.bind(this)를 통해 연결시키는 방법
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = function () {
+        const counter = new Counter();
+        counter.render();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

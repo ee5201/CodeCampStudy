@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+
+        <script>
+            const onThen = () =>{
+                new Promise((resolve,reject)=>{
+                    //시간이 걸리는 작업 (ex API 보내기등)
+                    //...
+                    //...
+                    //...
+                    setTimeout(()=>{
+                        try{
+                            const res = "철수" // 2초가 걸려서 백엔드에서 "철수 "데이터 받아옴
+                        resolve(res) // 성공하면 이거 실행
+                        }catch(error){
+                            reject("에러가 발생됨")
+                        }
+                    },2000)
+                }).then((res) => {
+                    console.log(res) // 최종결과 철수
+                })
+
+            };
+
+            cosnt onawaite = async () =>{
+
+                const result = await new Promise((resolve,reject)=>{
+                    //시간이 걸리는 작업 (ex API 보내기등)
+                    //...
+                    //...
+                    //...
+                    setTimeout(()=>{
+                        try{
+                            const res = "철수" // 2초가 걸려서 백엔드에서 "철수 "데이터 받아옴
+                        resolve(res) // 성공하면 이거 실행
+                        }catch(error){
+                            reject("에러가 발생됨")
+                        }
+                    },2000)
+                })
+                console.log(result) // 최종결과 철수
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="onThen()">promise 실행하기(.then)</button>
+        <button onclick="onawaite()">promise 실행하기(await</button>
+    </body>
+</html>

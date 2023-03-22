@@ -1,0 +1,29 @@
+function useState(aaa) {
+const mystate = aaa /// aaa를 사용해서 state의 초기값 설정 
+const mySetState = (bbb) => {
+    console.log(`${mystate}에서 ${bbb} 로 state를 변경하겠씁니다!!`) //1. bbb로 mystate변경하기 
+    console.log(`변경된 ${bbb}  "를 사용해서 컴포넌트를 리렌더링하겠습니다`)
+                //2. 해당 컴포넌트를 리렌더링 시키기 !!!(render 함수 )
+
+}
+    return [mystate,mySetState]
+    
+}
+undefined
+const [count,setCount] = useState(10) 
+undefined
+count
+10
+
+setCount(20)
+VM2278:4 10에서 20 로 state를 변경하겠씁니다!!
+VM2278:5 변경된 20  "를 사용해서 컴포넌트를 리렌더링하겠습니다
+undefined
+const qqq = useState("철수")
+undefined
+qqq[0]
+'철수'
+qqq[1]("훈")
+VM2278:4 철수에서 훈 로 state를 변경하겠씁니다!!
+VM2278:5 변경된 훈  "를 사용해서 컴포넌트를 리렌더링하겠습니다
+undefined

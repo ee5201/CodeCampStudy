@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>클러저 실습</title>
+    <script>
+      function aaa() {
+        const apple = 10;
+
+        function bbb() {
+          const banana = 20;
+          consle.log(banana);
+          console.log(apple);
+          console.log(qqq);
+        }
+
+        const qqq = 3;
+        bbb();
+      }
+      aaa();
+    </script>
+  </head>
+  <body></body>
+</html>

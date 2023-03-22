@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise All</title>
+    <script>
+      const startPromise = async () => {
+        console.time("철수");
+        const result1 = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("성공");
+          }, 2000);
+        });
+
+        const result2 = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("성공");
+          }, 3000);
+        });
+
+        const result3 = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("성공");
+          }, 1000);
+        });
+        console.timeEnd("철수");
+      };
+
+      const startPromiseAll = async () => {
+        // await Promise.all[(promise, promise, promise)];
+        await Promise.all([
+          console.time("철수"),
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("성공");
+            }, 2000);
+          }),
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("성공");
+            }, 3000);
+          }),
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("성공");
+            }, 1000);
+          }),
+          console.timeEnd("철수"),
+        ]);
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="startPromise()">프로미스 연습하기</button>
+    <button onclick="startPromiseAll()">프로미스 올 연습하기</button>
+  </body>
+</html>

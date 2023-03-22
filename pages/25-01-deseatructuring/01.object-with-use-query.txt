@@ -1,0 +1,33 @@
+function useQuery () {
+  //aaa(ex,FETCH-BOARDS) 를 통해서 backend에 API요청함
+
+  return{
+    data: {fetchBoards:{writer:"철수"}},
+    loading:false,
+    refetch: () => {
+      console.log("리페치가 실행됩니다.!!!)
+    }
+  }
+}
+undifined
+
+connst {data,refetch} = useQuery("FETCH_BOARDS")
+undefined
+
+data.fetchBoards.writer
+철수
+
+refetch()
+Vm867:9 리페리가 실행됩니다.!!
+undefined
+
+const qqq = useQuery("FETCH_BOARDS")
+undefined
+
+qqq.data.fetchBoards.writer
+철수
+
+qqq.refetch()
+
+qqq.loading
+false
